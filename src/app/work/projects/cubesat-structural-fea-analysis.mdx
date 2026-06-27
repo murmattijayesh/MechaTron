@@ -1,0 +1,44 @@
+---
+title: "CubeSat Structural FEA: Static, Modal & Buckling Analysis"
+publishedAt: "2024-08-13"
+summary: "Full structural validation of a CubeSat frame in Ansys — static, modal and eigenvalue buckling analysis confirming launch survivability with safety factors from 5.4 to 15."
+images:
+  - "/images/projects/cubesat/cover.jpg"
+  - "/images/projects/cubesat/deformation.jpg"
+  - "/images/projects/cubesat/result-1.jpg"
+  - "/images/projects/cubesat/result-2.jpg"
+  - "/images/projects/cubesat/result-3.jpg"
+  - "/images/projects/cubesat/result-4.jpg"
+team:
+  - name: "Jayesh Murmatti"
+    role: "Mechanical Design Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/jayesh-murmatti-450851177/"
+---
+
+## Overview
+
+A CubeSat is a miniaturised satellite built to a standardised 10×10×10 cm unit for cost-effective deployment in low Earth orbit. Because launch and orbital conditions are brutal, the structure has to be proven on paper long before it flies. I modelled the CubeSat frame in SolidWorks and ran a complete finite element campaign in Ansys to verify its structural integrity across static, dynamic and stability load cases.
+
+## Objective
+
+Confirm that the frame survives launch loads and the orbital environment — with adequate safety margins, controlled deformation, no resonance during launch, and strong resistance to compressive buckling.
+
+## Approach
+
+- **Material:** Aluminium 7075-T6 — E = 71.7 GPa, ν = 0.33, ρ = 2810 kg/m³, S<sub>ut</sub> = 572 MPa, S<sub>yt</sub> = 503 MPa.
+- **Static structural** analysis to evaluate stress, deformation and factor of safety under static loading.
+- **Modal** analysis to extract natural frequencies and check for resonance against the launch environment.
+- **Eigenvalue buckling** analysis to quantify resistance to compressive instability.
+- **Tools:** SolidWorks (CAD) and Ansys (FEA).
+
+## Results
+
+- **Safety factor: 5.44 to 15** across the structure, confirming structural integrity under static loads.
+- **Maximum total deformation: 0.27 mm (2.69 × 10⁻⁴ m)** — minimal displacement, ensuring structural stability in orbit.
+- **First-mode natural frequency: 7.92 Hz**, within the safe range and clear of launch excitation, preventing resonance.
+- **Buckling load multiplier: 158.96**, demonstrating strong compressive resistance.
+
+## Outcome
+
+The analysis validated the CubeSat frame as launch-ready, with quantified margins on strength, stiffness, vibration and buckling. The workflow — CAD in SolidWorks, multi-physics validation in Ansys — is directly transferable to qualifying any lightweight aerospace structure before manufacture.

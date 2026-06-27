@@ -2,21 +2,21 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Jayesh",
+  lastName: "Murmatti",
+  name: `Jayesh Murmatti`,
+  role: "Mechanical Design Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-  locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
+  email: "murmattijayesh@gmail.com",
+  location: "Asia/Kolkata", // IANA time zone identifier (Pune, India → IST)
+  languages: ["English", "Hindi", "Marathi", "Japanese"],
+  locale: "en", // BCP 47 language tag for the HTML lang attribute
 };
 
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false,
+  title: <>Subscribe to {person.firstName}'s updates</>,
+  description: <>Occasional notes on design, simulation and automation.</>,
 };
 
 const social: Social = [
@@ -26,25 +26,13 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/murmattijayesh",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/jayesh-murmatti-450851177/",
     essential: true,
   },
   {
@@ -59,26 +47,28 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name} – Mechanical Design Engineer`,
+  description: `Portfolio of ${person.name}, a Mechanical Design Engineer specialising in CAD, Ansys FEA and SolidWorks automation.`,
+  headline: <>Designs validated by simulation, sped up by automation</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">CubeSat FEA</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Featured project
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/cubesat-structural-fea-analysis",
   },
   subline: (
     <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} at{" "}
-      <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+      I'm Jayesh, a Mechanical Design Engineer at{" "}
+      <Text as="span" size="xl" weight="strong">Aeron Systems</Text>. I bridge CAD design,
+      Ansys FEA and <br /> SolidWorks VBA automation to ship hardware that is lighter, stronger and
+      faster to release.
     </>
   ),
 };
@@ -87,7 +77,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, a Mechanical Design Engineer based in Pune, India`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -96,7 +86,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -104,52 +94,63 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        {person.firstName} is a {person.location.split("/")[1]?.replace("_", " ")}-based {person.role.toLowerCase()} with a passion for transforming complex challenges
-        into simple, elegant design solutions. Their work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Jayesh Murmatti is a Pune-based Mechanical Design Engineer who turns requirements into
+        validated, manufacturable hardware. He combines hands-on SolidWorks design, Ansys FEA
+        (static, modal, thermal and buckling) and SolidWorks VBA automation to make the design
+        process faster and more reliable. His project work spans aerospace structures, structural
+        and thermal simulation, and applied machine learning for design optimisation — backed by a
+        B.E. in Mechanical Engineering (Honours in 3D Printing) and a 97% diploma.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Aeron Systems",
+        timeframe: "Sept 2024 – Present",
+        role: "Mechanical Design Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Built SolidWorks VBA macros that automate production-drawing creation and Bill of
+            Materials (BOM) export — replacing repetitive, error-prone manual drafting and data
+            entry with a single, repeatable run, and freeing engineering time for actual design
+            work.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Standardised drawing templates, title blocks and BOM formats through the automation,
+            improving consistency across releases and reducing rework caused by manual transcription
+            mistakes.
+          </>,
+          <>
+            Model parts, assemblies and detailed manufacturing drawings in SolidWorks, applying
+            GD&T, sheet-metal and design-for-manufacture principles to keep designs producible and
+            review-ready.
+          </>,
+          <>
+            Validate designs with Ansys FEA — static structural, modal, thermal and buckling — to
+            confirm structural and thermal margins before release.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Haimer",
+        timeframe: "Nov 2021 – May 2022",
+        role: "Trainee Service Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Supported the service and logistics team by tracking inventory and the flow of machine
+            parts and components for tool-changing and tool-presetting machines.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Ran inventory checks and maintained accurate documentation for parts used across the
+            machine fleet, keeping records reliable for service operations.
+          </>,
+          <>
+            Helped prepare for company exhibitions and represented the company's machinery to
+            prospective clients.
           </>,
         ],
         images: [],
@@ -157,74 +158,118 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Modern Education Society's College of Engineering, Pune",
+        description: (
+          <>
+            B.E. in Mechanical Engineering with Honours in 3D Printing. Final-year SGPA 9.00; degree
+            CGPA 8.36 (2021–2024).
+          </>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Cusrow Wadia Institute of Technology, Pune",
+        description: (
+          <>Diploma in Mechanical Engineering — 97.35% aggregate (2018–2021).</>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "CAD & Mechanical Design",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            3D modelling, assemblies, sheet metal and production drafting in SolidWorks, Fusion 360
+            and CATIA — with GD&T, BOM generation and design-for-manufacture throughout.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "SolidWorks" },
+          { name: "Fusion 360" },
+          { name: "CATIA" },
+          { name: "GD&T" },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            src: "/images/projects/bench-vice/cover.jpg",
+            alt: "Bench vice assembly drawing with BOM",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Next.js",
+        title: "FEA & Simulation",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Ansys-based static structural, modal, thermal and buckling analysis to verify safety
+            factors, deformation, natural frequencies and thermal limits before manufacture.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Ansys" },
+          { name: "Static Structural" },
+          { name: "Modal" },
+          { name: "Thermal" },
+          { name: "Buckling" },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            src: "/images/projects/cubesat/deformation.jpg",
+            alt: "CubeSat total deformation FEA result",
+            width: 8,
+            height: 9,
+          },
+          {
+            src: "/images/projects/solenoid-thermal/cover.jpg",
+            alt: "Solenoid steady-state thermal analysis",
+            width: 8,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "SolidWorks Automation (VBA)",
+        description: (
+          <>
+            Custom VBA macros that automate drawing generation, BOM export and repetitive,
+            high-volume tasks inside SolidWorks — turning manual, error-prone workflows into fast,
+            repeatable, one-click runs.
+          </>
+        ),
+        tags: [
+          { name: "VBA" },
+          { name: "SolidWorks API" },
+          { name: "Automation" },
+        ],
+        images: [],
+      },
+      {
+        title: "Programming & AI/ML",
+        description: (
+          <>
+            Python and MATLAB for engineering analysis, data visualisation and applied machine
+            learning — including supervised learning and genetic-algorithm optimisation for design
+            problems.
+          </>
+        ),
+        tags: [
+          { name: "Python" },
+          { name: "MATLAB" },
+          { name: "Machine Learning" },
+          { name: "Genetic Algorithms" },
+        ],
+        images: [
+          {
+            src: "/images/projects/airfoil-optimization/cover.jpg",
+            alt: "NACA airfoil optimisation comparison",
             width: 16,
             height: 9,
           },
@@ -237,68 +282,75 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Notes on design, simulation and automation",
+  description: `Read what ${person.name} has been working on recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  description: `Mechanical design, FEA and AI/ML projects by ${person.name}`,
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  title: `Project gallery – ${person.name}`,
+  description: `A visual collection of FEA, CFD and CAD work by ${person.name}`,
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      src: "/images/gallery/cubesat-render.jpg",
+      alt: "CubeSat structural frame – CAD model",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/gallery/truss-stress.jpg",
+      alt: "Planar truss direct-stress distribution (Ansys)",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/solenoid-result.jpg",
+      alt: "Solenoid temperature distribution",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/gallery/cubesat-deformation.jpg",
+      alt: "CubeSat total deformation under static load",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/airfoil-comparison.jpg",
+      alt: "Baseline vs genetic-algorithm-optimised NACA airfoil",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/pneumatic-strain.jpg",
+      alt: "Pneumatic cylinder cover – equivalent elastic strain",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
+      src: "/images/gallery/solenoid-thermal.jpg",
+      alt: "Solenoid steady-state thermal setup",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/bench-vice.jpg",
+      alt: "Bench vice assembly with parts list",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/brain-tumor.jpg",
+      alt: "Brain-tumour detection on an MRI scan (MATLAB)",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/cubesat-modal.jpg",
+      alt: "CubeSat modal analysis result",
+      orientation: "horizontal",
     },
   ],
 };

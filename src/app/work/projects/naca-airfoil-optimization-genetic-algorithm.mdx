@@ -1,0 +1,35 @@
+---
+title: "NACA Airfoil Optimisation with a Genetic Algorithm"
+publishedAt: "2024-06-20"
+summary: "Optimised a NACA 4-digit airfoil for maximum lift using a genetic algorithm in MATLAB, with the result validated by CFD in Ansys Fluent — achieving a 200% increase in lift."
+images:
+  - "/images/projects/airfoil-optimization/cover.jpg"
+  - "/images/projects/airfoil-optimization/optimized.jpg"
+  - "/images/projects/airfoil-optimization/cfd-1.jpg"
+  - "/images/projects/airfoil-optimization/cfd-2.jpg"
+team:
+  - name: "Jayesh Murmatti"
+    role: "Mechanical Design Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/jayesh-murmatti-450851177/"
+---
+
+## Overview
+
+The goal was to optimise the profile of a NACA 4-digit series airfoil to maximise lift, using a genetic algorithm to search the design space and CFD to validate the winner. The project pairs a machine-learning optimisation loop with physics-based simulation.
+
+## Approach
+
+- **Optimiser:** developed and implemented a genetic algorithm in MATLAB to evolve the airfoil shape (camber, position and thickness) toward maximum lift.
+- **Validation:** ran CFD simulations in Ansys Fluent on the optimised profile, with appropriate boundary conditions and turbulence models for accurate results.
+- **Iteration:** repeatedly adjusted airfoil parameters in the genetic algorithm to converge on an optimal design, benchmarked against a baseline NACA 2414.
+
+## Results
+
+- **200% increase in lift** versus the baseline airfoil, confirming substantially improved aerodynamic performance.
+- The optimised shape was validated through detailed CFD analysis, ensuring the result was reliable rather than a numerical artefact of the optimiser.
+- Demonstrated a clear, repeatable methodology for future airfoil optimisation combining genetic algorithms with CFD.
+
+## Outcome
+
+The project shows an end-to-end, data-driven design loop: an ML optimiser proposes shapes, CFD verifies them, and the two iterate to a validated, high-performance result — a workflow that generalises well beyond airfoils to other shape-optimisation problems.
