@@ -1,14 +1,5 @@
-"use client";
-
-import {
-  AvatarGroup,
-  Carousel,
-  Column,
-  Flex,
-  Heading,
-  SmartLink,
-  Text,
-} from "@once-ui-system/core";
+import Link from "next/link";
+import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   href: string;
@@ -19,72 +10,68 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  kicker?: string;
+  index?: number;
+  compact?: boolean;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
+  priority = false,
   images = [],
   title,
   content,
   description,
-  avatars,
   link,
+  kicker,
+  index,
+  compact = false,
 }) => {
+  const cover = images[0];
+  const code = typeof index === "number" ? String(index + 1).padStart(2, "0") : undefined;
+
   return (
-    <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-      />
-      <Flex
-        s={{ direction: "column" }}
-        fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
-      >
-        {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
-          </Flex>
+    <article className={`${styles.card} ${compact ? styles.compact : ""}`}>
+      <Link href={href} className={styles.visual} aria-label={title} tabIndex={-1}>
+        {cover ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={cover}
+            alt={title}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
+            className={styles.image}
+          />
+        ) : (
+          <span className={styles.generated} aria-hidden="true">
+            <span className={styles.grid} />
+            <span className={styles.ring} />
+            <span className={styles.ringTwo} />
+            {code && <span className={styles.code}>{code}</span>}
+            {kicker && <span className={styles.genKicker}>{kicker}</span>}
+          </span>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
-                >
-                  <Text variant="body-default-s">Read case study</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
-            </Flex>
-          </Column>
-        )}
-      </Flex>
-    </Column>
+        <span className={styles.shade} aria-hidden="true" />
+      </Link>
+      <div className={styles.body}>
+        {kicker && cover && <span className={styles.kicker}>{kicker}</span>}
+        <h2 className={styles.title}>
+          <Link href={href}>{title}</Link>
+        </h2>
+        {description?.trim() && <p className={styles.description}>{description}</p>}
+        <div className={styles.links}>
+          {content?.trim() && (
+            <Link href={href} className={styles.link}>
+              Read case study <span aria-hidden="true">→</span>
+            </Link>
+          )}
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer" className={styles.link}>
+              View project <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
   );
 };
