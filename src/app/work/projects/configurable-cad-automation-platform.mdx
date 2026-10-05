@@ -1,0 +1,40 @@
+---
+title: "Configurable CAD Automation Platform"
+publishedAt: "2026-10-02"
+summary: "My next flagship build: an end-to-end workflow connecting a web requirements form to SolidWorks automation and automated engineering deliverables, without relying on DriveWorks."
+tag: "Web → Backend → SolidWorks API → PDF / STEP / BOM"
+images: []
+team:
+  - name: "Jayesh Murmatti"
+    role: "Mechanical Design & Automation Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/jayesh-murmatti-450851177/"
+---
+
+## Status
+
+**Planned / in design.** This page describes the architecture I'm building toward. It's not a finished product yet.
+
+## The idea
+
+A customer enters requirements on a website. The system configures a SolidWorks assembly, generates the drawing and returns engineering deliverables, with no manual CAD in between.
+
+## Pipeline
+
+Website → Customer enters requirements → Backend → SolidWorks API → Configures assembly → Generates drawing → Generates PDF / STEP / BOM → Customer receives engineering output
+
+## Planned architecture
+
+- **Web form** to capture structured requirements
+- **Backend** in Python (FastAPI) or C#
+- **SolidWorks worker** that runs the CAD automation
+- **Output generation** for drawings, PDF, STEP and BOM
+- **Web delivery** of the engineering deliverables
+
+## Why without DriveWorks
+
+Building the automation directly on the SolidWorks API keeps full control over the logic, the data flow and the deliverables. It also grows the GA automation work I already do into a complete, web-driven system.
+
+## Why it matters
+
+This project ties together everything I'm working toward: mechanical design, CAD automation, engineering software and a fully automated path from requirement to engineering output.

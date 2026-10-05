@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Jayesh",
   lastName: "Murmatti",
   name: `Jayesh Murmatti`,
-  role: "Mechanical Design Engineer",
+  role: "Mechanical Design & Automation Engineer",
   avatar: "/images/avatar.jpg",
   email: "murmattijayesh@gmail.com",
   location: "Asia/Kolkata", // IANA time zone identifier (Pune, India → IST)
@@ -47,28 +47,26 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name} – Mechanical Design Engineer`,
-  description: `Portfolio of ${person.name}, a Mechanical Design Engineer specialising in CAD, Ansys FEA and SolidWorks automation.`,
-  headline: <>Designs validated by simulation, sped up by automation</>,
+  title: `${person.name} – Mechanical Design & Automation Engineer`,
+  description: `Portfolio of ${person.name}, a Mechanical Design & Automation Engineer building SolidWorks automation, CAD add-ins and engineering tools that make mechanical design faster.`,
+  headline: <>I build the tools that make mechanical design faster</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">CubeSat FEA</strong>{" "}
+        <strong className="ml-4">GA Drawing Automation</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured project
         </Text>
       </Row>
     ),
-    href: "/work/cubesat-structural-fea-analysis",
+    href: "/work/ga-drawing-automation",
   },
   subline: (
     <>
-      I'm Jayesh, a Mechanical Design Engineer at{" "}
-      <Text as="span" size="xl" weight="strong">Aeron Systems</Text>. I bridge CAD design,
-      Ansys FEA and <br /> SolidWorks VBA automation to ship hardware that is lighter, stronger and
-      faster to release.
+      I'm Jayesh, a Mechanical Design & Automation Engineer at Aeron Systems. I design production
+      hardware and automate the repetitive parts of engineering.
     </>
   ),
 };
@@ -77,7 +75,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, a Mechanical Design Engineer based in Pune, India`,
+  description: `Meet ${person.name}, a Mechanical Design & Automation Engineer based in Pune, India`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,12 +92,30 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Jayesh Murmatti is a Pune-based Mechanical Design Engineer who turns requirements into
-        validated, manufacturable hardware. He combines hands-on SolidWorks design, Ansys FEA
-        (static, modal, thermal and buckling) and SolidWorks VBA automation to make the design
-        process faster and more reliable. His project work spans aerospace structures, structural
-        and thermal simulation, and applied machine learning for design optimisation — backed by a
-        B.E. in Mechanical Engineering (Honours in 3D Printing) and a 97% diploma.
+        <p>
+          <strong>I design hardware — and then I engineer the way it gets designed.</strong>
+        </p>
+        <p>
+          I&apos;m a Mechanical Design Engineer at Aeron Systems in Pune, taking products from
+          first requirement to engineering release: 3D CAD, assemblies, GA and detail drawings,
+          BOMs, GD&amp;T, DFM/DFA and prototype validation across five product families.
+        </p>
+        <p>
+          Along the way I kept asking one question — &ldquo;why are we doing this by hand if the
+          computer can do it?&rdquo; The answer became my edge. I build SolidWorks automation that
+          drives repetitive GA drawing work from structured inputs, targeting a 60–80% cut in
+          repetitive effort, and in-built SolidWorks add-ins that bring drawing review and design
+          checks straight into the CAD workflow.
+        </p>
+        <p>
+          Today I work where mechanical engineering meets software: CAD APIs, automation and AI
+          applied to real design problems. The goal is simple — engineers spend less time repeating
+          tasks and more time doing engineering.
+        </p>
+        <p>
+          B.E. Mechanical Engineering (Honours in 3D Printing) · Diploma in Mechanical Engineering,
+          97.35%.
+        </p>
       </>
     ),
   },
@@ -110,27 +126,31 @@ const about: About = {
       {
         company: "Aeron Systems",
         timeframe: "Sept 2024 – Present",
-        role: "Mechanical Design Engineer",
+        role: "Mechanical Design Engineer · Pune, India",
         achievements: [
           <>
-            Built SolidWorks VBA macros that automate production-drawing creation and Bill of
-            Materials (BOM) export — replacing repetitive, error-prone manual drafting and data
-            entry with a single, repeatable run, and freeing engineering time for actual design
-            work.
+            Mechanical design and product development for engineering products used in industrial,
+            IoT and renewable-energy monitoring applications — components, assemblies and enclosures
+            in SolidWorks.
           </>,
           <>
-            Standardised drawing templates, title blocks and BOM formats through the automation,
-            improving consistency across releases and reducing rework caused by manual transcription
-            mistakes.
+            Contributed across the XTM-930, XTM-920, DLG88 Series, PT1000 and RIGEL2-MT-RTD1K
+            product families — assemblies, drawings, BOMs, documentation, design changes and
+            engineering release.
           </>,
           <>
-            Model parts, assemblies and detailed manufacturing drawings in SolidWorks, applying
-            GD&T, sheet-metal and design-for-manufacture principles to keep designs producible and
-            review-ready.
+            Developed a SolidWorks automation workflow for repetitive GA drawing activities, driven
+            by structured requirement data and an automation form — targeting a 60–80% reduction in
+            repetitive drawing effort.
           </>,
           <>
-            Validate designs with Ansys FEA — static structural, modal, thermal and buckling — to
-            confirm structural and thermal margins before release.
+            Built in-built SolidWorks add-ins and engineering utilities for drawing review, design
+            checks and workflow assistance, plus VBA macros for drawing creation and BOM export.
+          </>,
+          <>
+            Applied GD&T, DFM/DFA and drawing-quality checks in design reviews; supported prototype
+            development and validation, and resolved design and manufacturing issues with
+            electronics and manufacturing teams.
           </>,
         ],
         images: [],
@@ -183,97 +203,90 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "CAD & Mechanical Design",
+        title: "CAD Automation & Engineering Software",
         description: (
           <>
-            3D modelling, assemblies, sheet metal and production drafting in SolidWorks, Fusion 360
-            and CATIA — with GD&T, BOM generation and design-for-manufacture throughout.
+            SolidWorks API and VBA automation, custom in-built SolidWorks add-ins, automation forms
+            driven by structured engineering inputs, and Python tooling — automating engineering
+            workflows, not just isolated CAD commands.
           </>
         ),
         tags: [
-          { name: "SolidWorks" },
-          { name: "Fusion 360" },
-          { name: "CATIA" },
-          { name: "GD&T" },
-        ],
-        images: [
-          {
-            src: "/images/projects/bench-vice/cover.jpg",
-            alt: "Bench vice assembly drawing with BOM",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "FEA & Simulation",
-        description: (
-          <>
-            Ansys-based static structural, modal, thermal and buckling analysis to verify safety
-            factors, deformation, natural frequencies and thermal limits before manufacture.
-          </>
-        ),
-        tags: [
-          { name: "Ansys" },
-          { name: "Static Structural" },
-          { name: "Modal" },
-          { name: "Thermal" },
-          { name: "Buckling" },
-        ],
-        images: [
-          {
-            src: "/images/projects/cubesat/deformation.jpg",
-            alt: "CubeSat total deformation FEA result",
-            width: 8,
-            height: 9,
-          },
-          {
-            src: "/images/projects/solenoid-thermal/cover.jpg",
-            alt: "Solenoid steady-state thermal analysis",
-            width: 8,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "SolidWorks Automation (VBA)",
-        description: (
-          <>
-            Custom VBA macros that automate drawing generation, BOM export and repetitive,
-            high-volume tasks inside SolidWorks — turning manual, error-prone workflows into fast,
-            repeatable, one-click runs.
-          </>
-        ),
-        tags: [
-          { name: "VBA" },
           { name: "SolidWorks API" },
-          { name: "Automation" },
+          { name: "VBA" },
+          { name: "Python" },
+          { name: "Custom add-ins" },
+          { name: "Drawing automation" },
+          { name: "Workflow automation" },
         ],
         images: [],
       },
       {
-        title: "Programming & AI/ML",
+        title: "Mechanical Design",
         description: (
           <>
-            Python and MATLAB for engineering analysis, data visualisation and applied machine
-            learning — including supervised learning and genetic-algorithm optimisation for design
-            problems.
+            3D CAD modelling, part and enclosure design, mechanical assemblies, engineering and GA
+            drawings, BOMs, design modifications and prototype support for production products.
           </>
         ),
         tags: [
-          { name: "Python" },
+          { name: "SolidWorks" },
+          { name: "CATIA" },
+          { name: "Fusion 360" },
+          { name: "Sheet metal" },
+          { name: "Surfacing" },
+          { name: "Advanced assemblies" },
+        ],
+        images: [],
+      },
+      {
+        title: "Engineering Design Practice",
+        description: (
+          <>
+            GD&T, DFM/DFA, DFMEA, design reviews, drawing-quality checks, prototype validation,
+            engineering change and product release documentation.
+          </>
+        ),
+        tags: [
+          { name: "GD&T" },
+          { name: "DFM / DFA" },
+          { name: "DFMEA" },
+          { name: "Design reviews" },
+          { name: "Engineering release" },
+        ],
+        images: [],
+      },
+      {
+        title: "Simulation & Analysis",
+        description: (
+          <>
+            Ansys static structural, modal, thermal and buckling analysis, with CFD fundamentals —
+            and MATLAB for engineering analysis and optimisation.
+          </>
+        ),
+        tags: [
+          { name: "Ansys" },
+          { name: "FEA" },
+          { name: "CFD fundamentals" },
           { name: "MATLAB" },
-          { name: "Machine Learning" },
-          { name: "Genetic Algorithms" },
         ],
-        images: [
-          {
-            src: "/images/projects/airfoil-optimization/cover.jpg",
-            alt: "NACA airfoil optimisation comparison",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Hardware & IoT",
+        description: (
+          <>
+            Arduino and Raspberry Pi projects — Bluetooth control, sensors, motor drivers, relays and
+            home automation.
+          </>
+        ),
+        tags: [
+          { name: "Arduino" },
+          { name: "Raspberry Pi" },
+          { name: "Sensors" },
+          { name: "Motor control" },
         ],
+        images: [],
       },
     ],
   },
@@ -291,7 +304,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Mechanical design, FEA and AI/ML projects by ${person.name}`,
+  description: `CAD automation, engineering tools, product development, simulation and hardware projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
