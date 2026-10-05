@@ -87,25 +87,6 @@ const approach = [
 
 const products = ["XTM-930", "XTM-920", "DLG88 Series", "PT1000", "RIGEL2-MT-RTD1K"];
 
-const journey = [
-  { title: "Mechanical foundation", text: "Diploma (97.35%) and B.E. Mechanical with Honours in 3D Printing." },
-  { title: "CAD & product development", text: "Parts, assemblies, drawings and BOMs in SolidWorks, CATIA and Fusion 360." },
-  { title: "Design engineering", text: "GD&T, DFM/DFA, DFMEA, prototyping and design reviews on real products." },
-  { title: "CAD automation", text: "“Why am I doing the same CAD operation again and again?”" },
-  { title: "GA automation", text: "A structured workflow targeting 60–80% less repetitive GA drawing effort." },
-  { title: "SolidWorks add-ins", text: "Beyond macros — in-built add-ins for drawing review and workflow assistance." },
-  { title: "Mech AI Suite", text: "Exploring how software and AI can assist engineering drawing review." },
-  { title: "Next", text: "Design automation → engineering software → AI-assisted engineering.", next: true },
-];
-
-const toolbox = [
-  { group: "CAD", items: ["SolidWorks", "CATIA", "Fusion 360"] },
-  { group: "Automation", items: ["SolidWorks API", "VBA macros", "Custom add-ins", "Workflow automation"] },
-  { group: "Programming", items: ["Python", "VBA", "MATLAB"] },
-  { group: "Simulation", items: ["Ansys", "FEA", "CFD fundamentals"] },
-  { group: "Engineering", items: ["GD&T", "DFM / DFA", "DFMEA", "BOMs & release", "Prototype validation"] },
-];
-
 export default function Home() {
   const linkedIn = social.find((item) => item.name === "LinkedIn")?.link;
 
@@ -299,42 +280,6 @@ export default function Home() {
               </span>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* JOURNEY */}
-      <section className={styles.section}>
-        <header className={styles.sectionHead}>
-          <span className={styles.eyebrow}>{"// Trajectory"}</span>
-          <h2>From designing parts to building engineering systems.</h2>
-        </header>
-        <ol className={styles.timeline}>
-          {journey.map((item) => (
-            <li key={item.title} className={item.next ? styles.timelineNext : undefined}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* TOOLBOX */}
-      <section className={styles.section}>
-        <header className={styles.sectionHead}>
-          <span className={styles.eyebrow}>{"// Toolbox"}</span>
-          <h2>The stack behind the work.</h2>
-        </header>
-        <div className={styles.toolbox}>
-          {toolbox.map((block) => (
-            <div key={block.group} className={styles.tool}>
-              <h3>{block.group}</h3>
-              <ul>
-                {block.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
       </section>
 
